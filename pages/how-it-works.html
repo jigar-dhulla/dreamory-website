@@ -1,0 +1,567 @@
+<!-- How It Works -->
+<section class="how-it-works">
+    <div class="section-header fade-in">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Start building your memory collection in just minutes.</p>
+    </div>
+    <div class="steps-container">
+        <div class="step fade-in">
+            <div class="step-number">1</div>
+            <h3>Download & Install</h3>
+            <p>Get the app from your app store. It's free to start and works on both iOS and Android.</p>
+        </div>
+        <div class="step fade-in">
+            <div class="step-number">2</div>
+            <h3>Capture Your First Memory</h3>
+            <p>Add a photo, rate your experience, and add notes. It takes less than 30 seconds.</p>
+        </div>
+        <div class="step fade-in">
+            <div class="step-number">3</div>
+            <h3>Build Your Collection</h3>
+            <p>Keep adding experiences. Watch your personal database grow and discover patterns.</p>
+        </div>
+        <div class="step fade-in">
+            <div class="step-number">4</div>
+            <h3>Relive & Plan</h3>
+            <p>Browse past memories, track bucket list progress, and plan your next adventure.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Section -->
+<section class="demo-section">
+    <div class="section-header fade-in">
+        <h2 class="section-title">See It In Action</h2>
+        <p class="section-subtitle">Experience how simple it is to capture and organize your life's moments.</p>
+    </div>
+
+    <div class="demo-container">
+        <div class="demo-phone fade-in">
+            <div class="phone-frame">
+                <div class="phone-content">
+                    <div class="demo-app">
+                        <div class="app-header">
+                            <div class="header-title">✨ New Memory</div>
+                        </div>
+                        <div class="demo-form">
+                            <div class="form-section">
+                                <div class="photo-placeholder">
+                                    <div class="camera-icon">📷</div>
+                                    <span>Tap to add photo</span>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <input type="text" placeholder="What did you do?" class="demo-input" />
+                            </div>
+                            <div class="form-section">
+                                <div class="rating-section">
+                                    <span class="rating-label">How was it?</span>
+                                    <div class="star-rating">
+                                        <span class="star active">⭐</span>
+                                        <span class="star active">⭐</span>
+                                        <span class="star active">⭐</span>
+                                        <span class="star active">⭐</span>
+                                        <span class="star">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <textarea placeholder="Add notes (optional)" class="demo-textarea"></textarea>
+                            </div>
+                            <div class="form-section">
+                                <button class="save-button">Save Memory</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-features fade-in">
+            <div class="feature-highlight">
+                <div class="highlight-icon">⚡</div>
+                <h4>Quick & Simple</h4>
+                <p>Capture a memory in under 30 seconds. No complicated forms or endless options.</p>
+            </div>
+            <div class="feature-highlight">
+                <div class="highlight-icon">🎯</div>
+                <h4>Smart Categories</h4>
+                <p>Automatically suggests categories based on your input, or create your own custom ones.</p>
+            </div>
+            <div class="feature-highlight">
+                <div class="highlight-icon">📊</div>
+                <h4>Instant Insights</h4>
+                <p>See patterns in your experiences immediately. Track what makes you happiest.</p>
+            </div>
+            <div class="feature-highlight">
+                <div class="highlight-icon">🔄</div>
+                <h4>Always Improving</h4>
+                <p>The app learns from your habits to make memory capturing even faster over time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="section-header fade-in">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about getting started with Dreamory.</p>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item fade-in">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>Is Dreamory really free?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes! Dreamory is completely free to use with no limits on memories, photos, or features. We believe everyone should have access to preserving their life's moments.</p>
+            </div>
+        </div>
+
+        <div class="faq-item fade-in">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>What happens to my data?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>All your memories are stored locally on your device and encrypted. We never have access to your personal memories, photos, or data. You own and control everything.</p>
+            </div>
+        </div>
+
+        <div class="faq-item fade-in">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>Can I use it without internet?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! Dreamory works completely offline. All your memories are stored on your device, so you can capture and view them anytime, anywhere.</p>
+            </div>
+        </div>
+
+        <div class="faq-item fade-in">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>How much storage does it use?</h4>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>The app itself is very lightweight. Storage depends on how many photos you add, but we automatically optimize images to save space without losing quality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* How It Works */
+.how-it-works {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.steps-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    position: relative;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: calc(50% + 30px);
+    width: calc(100% - 60px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    z-index: 1;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.step p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Demo Section */
+.demo-section {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.demo-phone {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-frame {
+    width: 300px;
+    height: 600px;
+    background: #1a1a1a;
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.phone-content {
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.demo-app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.demo-form {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-section {
+    margin-bottom: 1rem;
+}
+
+.photo-placeholder {
+    background: var(--bg-light);
+    border: 2px dashed var(--primary);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.camera-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.demo-input, .demo-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+}
+
+.demo-textarea {
+    height: 80px;
+    resize: none;
+}
+
+.rating-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating-label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.star-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.star {
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.star.active {
+    opacity: 1;
+}
+
+.save-button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.demo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-highlight {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.highlight-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.feature-highlight h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 1.125rem;
+}
+
+.feature-highlight p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 5rem 2rem;
+    background: var(--bg-light);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+.faq-question h4 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.125rem;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Animations on Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .step::after {
+        display: none;
+    }
+
+    .demo-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .phone-frame {
+        width: 250px;
+        height: 500px;
+    }
+
+    .demo-features {
+        margin-top: 2rem;
+    }
+}
+</style>
+
+<script>
+// Add scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+
+// FAQ Toggle
+function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+
+// Interactive star rating demo
+document.querySelectorAll('.star').forEach((star, index) => {
+    star.addEventListener('click', () => {
+        const stars = document.querySelectorAll('.star');
+        stars.forEach((s, i) => {
+            if (i <= index) {
+                s.classList.add('active');
+            } else {
+                s.classList.remove('active');
+            }
+        });
+    });
+});
+</script>

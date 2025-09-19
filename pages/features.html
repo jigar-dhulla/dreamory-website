@@ -1,0 +1,410 @@
+<!-- Features Section -->
+<section class="features">
+    <div class="section-header fade-in">
+        <h2 class="section-title">Everything You Need to Capture Life's Moments</h2>
+        <p class="section-subtitle">Simple, powerful features designed to make memory keeping effortless and enjoyable.</p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-card fade-in">
+            <div class="feature-icon">📸</div>
+            <h3>Quick Photo Capture</h3>
+            <p>Snap photos instantly or choose from your gallery. Every memory deserves a visual reminder.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">⭐</div>
+            <h3>Smart Rating System</h3>
+            <p>Rate your experiences from 1-5 stars. Track what brings you joy and what to skip next time.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">🎯</div>
+            <h3>Bucket List Tracker</h3>
+            <p>Dream big and track your progress. Turn aspirations into achieved memories.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">📊</div>
+            <h3>Insightful Statistics</h3>
+            <p>Discover patterns in your experiences. See what categories bring you the most happiness.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">🔍</div>
+            <h3>Smart Search & Filter</h3>
+            <p>Find any memory instantly. Filter by date, category, rating, or search by keywords.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">📱</div>
+            <h3>Works Offline</h3>
+            <p>No internet? No problem. All your memories are stored locally on your device.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Features Section -->
+<section class="upcoming-features">
+    <div class="section-header fade-in">
+        <h2 class="section-title">Coming Soon to Dreamory</h2>
+        <p class="section-subtitle">We're constantly evolving to make your memory-keeping experience even better.</p>
+    </div>
+
+    <div class="timeline-container">
+        <!-- Phase 2: Near-term -->
+        <div class="phase-section fade-in">
+            <div class="phase-header">
+                <span class="phase-badge">Phase 2</span>
+                <h3>Launching Next Month</h3>
+            </div>
+            <div class="upcoming-grid">
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">📸</div>
+                    <h4>Multiple Photos per Event</h4>
+                    <ul>
+                        <li>Photo gallery with swipe navigation</li>
+                        <li>Add captions to each photo</li>
+                        <li>Create visual stories</li>
+                    </ul>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">🎯</div>
+                    <h4>Enhanced Bucket List</h4>
+                    <ul>
+                        <li>Dream board visualization</li>
+                        <li>Link achieved dreams to events</li>
+                        <li>Track progress with milestones</li>
+                    </ul>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">📈</div>
+                    <h4>Advanced Statistics</h4>
+                    <ul>
+                        <li>Beautiful charts and graphs</li>
+                        <li>Category breakdowns</li>
+                        <li>Happiness trends over time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3: Future -->
+        <div class="phase-section fade-in">
+            <div class="phase-header">
+                <span class="phase-badge future">Phase 3</span>
+                <h3>On the Horizon</h3>
+            </div>
+            <div class="upcoming-grid">
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">☁️</div>
+                    <h4>Cloud Sync</h4>
+                    <ul>
+                        <li>Secure user accounts</li>
+                        <li>Automatic cloud backup</li>
+                        <li>Seamless cross-device sync</li>
+                    </ul>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">👥</div>
+                    <h4>Social Features</h4>
+                    <ul>
+                        <li>Share memorable experiences</li>
+                        <li>Public/private privacy controls</li>
+                        <li>Get friend recommendations</li>
+                    </ul>
+                </div>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">🚀</div>
+                    <h4>Power Features</h4>
+                    <ul>
+                        <li>Custom tags system</li>
+                        <li>Create custom categories</li>
+                        <li>Export your memories</li>
+                        <li>Location-based suggestions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="roadmap-cta fade-in">
+        <p>Have a feature request? We're listening!</p>
+        <a href="#" onclick="router.navigate('/about')" class="secondary-button">Share Your Ideas</a>
+    </div>
+</section>
+
+<style>
+/* Features Section */
+.features {
+    padding: 5rem 2rem;
+    background: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Upcoming Features Section */
+.upcoming-features {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+    position: relative;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.phase-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.phase-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.phase-badge {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.phase-badge.future {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.phase-header h3 {
+    font-size: 1.75rem;
+    color: var(--text-dark);
+}
+
+.upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.upcoming-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.upcoming-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+    transition: all 0.5s ease;
+}
+
+.upcoming-card:hover::before {
+    top: -150%;
+    left: -150%;
+}
+
+.upcoming-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.upcoming-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.upcoming-card h4 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.upcoming-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.upcoming-card li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.upcoming-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.roadmap-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.roadmap-cta p {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.secondary-button {
+    background: white;
+    color: var(--primary);
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations on Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+// Add scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+</script>

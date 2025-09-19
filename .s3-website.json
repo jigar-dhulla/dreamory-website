@@ -1,0 +1,14 @@
+{
+  "IndexDocument": "index.html",
+  "ErrorDocument": "error.html",
+  "RoutingRules": [
+    {
+      "Condition": {
+        "KeyPrefixEquals": "/"
+      },
+      "Redirect": {
+        "ReplaceKeyWith": "index.html"
+      }
+    }
+  ]
+}
