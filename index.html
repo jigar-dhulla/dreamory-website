@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreamory - Turn Moments into Memories, Dreams into Reality</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         * {
             margin: 0;
@@ -68,6 +69,11 @@
             align-items: center;
             gap: 0.5rem;
             cursor: pointer;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
         }
 
         .nav-links {
@@ -207,7 +213,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo" onclick="router.navigate('/')">
-                <span>✨</span>
+                <img src="./images/logo.webp" alt="Dreamory Logo">
                 <span>Dreamory</span>
             </div>
             <ul class="nav-links" id="nav-links">
