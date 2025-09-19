@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="form-section">
-                                <input type="text" placeholder="What did you do?" class="demo-input" />
+                                <div class="demo-text-display">What did you do?</div>
                             </div>
                             <div class="form-section">
                                 <div class="rating-section">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="form-section">
-                                <textarea placeholder="Add notes (optional)" class="demo-textarea"></textarea>
+                                <div class="demo-text-display">Add notes (optional)</div>
                             </div>
                             <div class="form-section">
                                 <button class="save-button">Save Memory</button>
@@ -318,18 +318,16 @@
     margin-bottom: 0.5rem;
 }
 
-.demo-input, .demo-textarea {
+.demo-text-display {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #e1e5e9;
     border-radius: 8px;
     font-size: 16px;
     background: white;
-}
-
-.demo-textarea {
-    height: 80px;
-    resize: none;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
 }
 
 .rating-section {

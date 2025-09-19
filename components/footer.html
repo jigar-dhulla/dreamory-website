@@ -25,17 +25,13 @@
             <div class="footer-links">
                 <a href="#" onclick="router.navigate('/privacy')">Privacy Policy</a>
                 <a href="#" onclick="router.navigate('/terms')">Terms of Service</a>
-                <a href="mailto:hello@dreamory.app">Contact Us</a>
-                <a href="mailto:support@dreamory.app">Support</a>
+                <a href="mailto:hello@webjackl.com">Contact Us</a>
+                <a href="mailto:hello@webjackl.com">Support</a>
             </div>
         </div>
         <div class="footer-section">
             <h3>Stay Updated</h3>
-            <p>Get tips and updates on new features.</p>
-            <form id="newsletter-form" style="margin-top: 1rem;" onsubmit="handleNewsletterSignup(event)">
-                <input type="email" placeholder="Your email" style="padding: 0.5rem; border-radius: 5px; border: none; width: 100%; margin-bottom: 0.5rem;" required>
-                <button type="submit" style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%;">Subscribe</button>
-            </form>
+            <p>Follow us on social media for tips and updates on new features.</p>
         </div>
     </div>
     <div class="footer-bottom">
@@ -130,15 +126,3 @@ footer {
     }
 }
 </style>
-
-<script>
-// Newsletter signup handler
-function handleNewsletterSignup(event) {
-    event.preventDefault();
-    const email = event.target.querySelector('input[type="email"]').value;
-
-    // Simulate form submission
-    alert('Thanks for subscribing! We\'ll keep you updated on new features.');
-    event.target.reset();
-}
-</script>

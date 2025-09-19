@@ -177,8 +177,8 @@ The site uses CSS custom properties for consistent theming:
 ## 📞 Support
 
 For questions about the website or deployment:
-- Email: hello@dreamory.app
-- Technical Issues: support@dreamory.app
+- Email: hello@webjackl.com
+- Technical Issues: hello@webjackl.com
 
 ## 📄 License
 
