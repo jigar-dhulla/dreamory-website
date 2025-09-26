@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreamory - Turn Moments into Memories, Dreams into Reality</title>
+    <title>Dreamory - Personal Experience Database with Bucket List Manifestation</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         * {
@@ -15,8 +15,6 @@
         :root {
             --primary: #667eea;
             --secondary: #764ba2;
-            --accent: #ff6b6b;
-            --accent-secondary: #feca57;
             --text-dark: #2d3748;
             --text-light: #718096;
             --bg-light: #f7fafc;
@@ -26,12 +24,14 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             color: var(--text-dark);
-            overflow-x: hidden;
+            line-height: 1.6;
             background: var(--white);
         }
 
-        html {
-            scroll-behavior: smooth;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Navigation */
@@ -42,18 +42,11 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
-        nav.scrolled {
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -68,7 +61,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            cursor: pointer;
         }
 
         .logo img {
@@ -80,7 +72,6 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-            align-items: center;
         }
 
         .nav-links a {
@@ -88,35 +79,10 @@
             color: var(--text-dark);
             font-weight: 500;
             transition: color 0.3s ease;
-            position: relative;
-            cursor: pointer;
         }
 
         .nav-links a:hover {
             color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
         }
 
         .cta-button {
@@ -128,8 +94,6 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            display: inline-block;
-            cursor: pointer;
         }
 
         .cta-button:hover {
@@ -137,15 +101,233 @@
             box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
         }
 
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: white;
+            color: var(--primary);
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary);
+        }
+
+        .secondary-button:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Tech Stack Section */
+        .tech-stack {
+            background: var(--bg-light);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: var(--text-dark);
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Download Section */
+        .download {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .download .section-title {
+            color: white;
+            background: none;
+            -webkit-text-fill-color: white;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .btn-icon {
+            font-size: 2rem;
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .btn-subtitle {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .btn-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+
         /* Mobile Menu */
-        .menu-toggle {
+        .mobile-menu-toggle {
             display: none;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
         }
 
-        .menu-toggle span {
+        .mobile-menu-toggle span {
             width: 25px;
             height: 3px;
             background: var(--text-dark);
@@ -153,240 +335,170 @@
             border-radius: 3px;
         }
 
-        /* Main Content */
-        .main-content {
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        /* Loading Animation */
-        .loading-spinner {
-            display: none;
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(102, 126, 234, 0.3);
-            border-top: 4px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 2rem auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero-buttons {
                 flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                align-items: center;
             }
 
-            .nav-links.open {
-                display: flex;
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .menu-toggle {
-                display: flex;
+            .download-btn {
+                width: 100%;
+                max-width: 280px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo" onclick="router.navigate('/')">
-                <img src="./images/logo.webp" alt="Dreamory Logo">
-                <span>Dreamory</span>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#" onclick="router.navigate('/')" data-route="/">Home</a></li>
-                <li><a href="#" onclick="router.navigate('/features')" data-route="/features">Features</a></li>
-                <li><a href="#" onclick="router.navigate('/how-it-works')" data-route="/how-it-works">How It Works</a></li>
-                <li><a href="#" onclick="router.navigate('/download')" data-route="/download">Download</a></li>
-                <li><a href="#" onclick="router.navigate('/about')" data-route="/about">About</a></li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="./images/logo.webp" alt="Dreamory Logo">
+                    <span>Dreamory</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#tech">Tech</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="loading-spinner" id="loading"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Personal Experience Database with Bucket List Manifestation</h1>
+            <p>Mobile app for tracking life experiences and achieving dreams. Offline-first with SQLite storage, built with Laravel + Livewire + NativePHP.</p>
+            <div class="hero-buttons">
+                <a href="#download" class="cta-button">Get Started</a>
+                <a href="#features" class="secondary-button">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Pages will be loaded here -->
-        <div id="app"></div>
-    </main>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Features</h2>
+                <p class="section-subtitle">Everything you need to capture life's moments and achieve your dreams.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Events Management</h3>
+                    <p>Full CRUD operations for events with photos. Categories include Food & Dining, Music, Travel, Activities, Culture, and more. 1-5 star rating system with search and filter functionality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Dreams (Bucket List)</h3>
+                    <p>Full CRUD operations for dreams and goals. Priority system with 1-5 stars. Track achievements with celebrations, set target dates, and link achieved dreams to events.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard & Statistics</h3>
+                    <p>Real-time metrics for events and dreams. View recent activities, achievements, completion rates, and category breakdowns for both events and dreams.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Features</h3>
+                    <p>Bottom navigation: Home, Events, Dreams, Stats. Offline-first with SQLite storage. Touch-optimized UI with native photo capture and gallery integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technology Stack</h2>
+                <p class="section-subtitle">Built with modern, reliable technologies for the best mobile experience.</p>
+            </div>
+            <div class="tech-list">
+                <div class="tech-item">Laravel 12 + Livewire</div>
+                <div class="tech-item">NativePHP for Android</div>
+                <div class="tech-item">SQLite (Local Storage)</div>
+                <div class="tech-item">Alpine.js + Tailwind CSS 4</div>
+                <div class="tech-item">Offline-First Architecture</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Download Dreamory</h2>
+            <p>MVP completed and ready for mobile deployment.</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <div class="btn-icon">🤖</div>
+                    <div class="btn-text">
+                        <span class="btn-subtitle">Get it on</span>
+                        <span class="btn-title">Google Play</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Questions, feedback, or feature requests? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-info">
+                <p>📧 <a href="mailto:hello@webjackl.com">hello@webjackl.com</a></p>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Simple SPA Router
-        class Router {
-            constructor() {
-                this.routes = {};
-                this.currentRoute = '';
-
-                // Handle browser back/forward
-                window.addEventListener('popstate', () => {
-                    this.loadRoute(window.location.pathname);
-                });
-            }
-
-            addRoute(path, handler) {
-                this.routes[path] = handler;
-            }
-
-            navigate(path) {
-                if (path !== this.currentRoute) {
-                    window.history.pushState({}, '', path);
-                    this.loadRoute(path);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            }
-
-            async loadRoute(path) {
-                // Normalize path
-                if (path === '' || path === '/') path = '/';
-
-                this.currentRoute = path;
-                this.updateNavigation(path);
-
-                // Show loading
-                document.getElementById('loading').style.display = 'block';
-
-                try {
-                    if (this.routes[path]) {
-                        await this.routes[path]();
-                    } else {
-                        // 404 - redirect to home
-                        window.history.replaceState({}, '', '/');
-                        await this.routes['/']();
-                    }
-                } catch (error) {
-                    console.error('Route loading error:', error);
-                    document.getElementById('app').innerHTML = '<div style="padding: 2rem; text-align: center;"><h2>Page not found</h2><p>Sorry, the page you\'re looking for doesn\'t exist.</p></div>';
-                }
-
-                // Hide loading
-                document.getElementById('loading').style.display = 'none';
-            }
-
-            updateNavigation(path) {
-                // Update active nav link
-                const navLinks = document.querySelectorAll('.nav-links a');
-                navLinks.forEach(link => {
-                    const route = link.getAttribute('data-route');
-                    if (route === path) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-        }
-
-        // Load page content
-        async function loadPage(pageName) {
-            try {
-                const [pageResponse, footerResponse] = await Promise.all([
-                    fetch(`./pages/${pageName}.html`),
-                    fetch(`./components/footer.html`)
-                ]);
-
-                if (!pageResponse.ok) throw new Error(`Failed to load ${pageName}`);
-                if (!footerResponse.ok) throw new Error('Failed to load footer');
-
-                const [pageHtml, footerHtml] = await Promise.all([
-                    pageResponse.text(),
-                    footerResponse.text()
-                ]);
-
-                document.getElementById('app').innerHTML = pageHtml + footerHtml;
-
-                // Clean up any existing observers to prevent conflicts
-                if (window.currentPageObserver) {
-                    window.currentPageObserver.disconnect();
-                    window.currentPageObserver = null;
-                }
-
-                // Execute any page-specific scripts in isolated scope
-                const scripts = document.getElementById('app').querySelectorAll('script');
-                scripts.forEach((script, index) => {
-                    try {
-                        // Wrap script in an IIFE to prevent global variable conflicts
-                        const wrappedScript = `
-                            (function() {
-                                ${script.textContent}
-                            })();
-                        `;
-                        const scriptFunction = new Function(wrappedScript);
-                        scriptFunction();
-                    } catch (error) {
-                        console.warn(`Script execution warning (page script ${index + 1}):`, error);
-                    }
-                });
-            } catch (error) {
-                console.error('Error loading page:', error);
-                document.getElementById('app').innerHTML = '<div style="padding: 2rem; text-align: center;"><h2>Error loading page</h2><p>Please try again later.</p></div>';
-            }
-        }
-
-        // Initialize router
-        const router = new Router();
-
-        // Define routes
-        router.addRoute('/', () => loadPage('home'));
-        router.addRoute('/features', () => loadPage('features'));
-        router.addRoute('/how-it-works', () => loadPage('how-it-works'));
-        router.addRoute('/download', () => loadPage('download'));
-        router.addRoute('/about', () => loadPage('about'));
-        router.addRoute('/privacy', () => loadPage('privacy'));
-        router.addRoute('/terms', () => loadPage('terms'));
-
-        // Load initial route after routes are defined
-        router.loadRoute(window.location.pathname);
+            });
+        });
 
         // Navigation scroll effect
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
+            const navbar = document.querySelector('nav');
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-        });
-
-        // Close mobile menu when clicking on a link
-        navLinks.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A') {
-                navLinks.classList.remove('open');
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
     </script>
