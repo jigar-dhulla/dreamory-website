@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreamory - Personal Experience Database with Bucket List Manifestation</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         * {
             margin: 0;
@@ -233,9 +234,316 @@
             color: var(--text-light);
         }
 
+        /* Screenshots Section */
+        .screenshots {
+            background: var(--bg-light);
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            background: #000;
+            border-radius: 40px;
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-light);
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .status-bar {
+            height: 44px;
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .welcome-header h1 {
+            font-size: 24px;
+            margin: 0 0 5px 0;
+            color: white;
+        }
+
+        .welcome-header p {
+            opacity: 0.8;
+            font-size: 14px;
+            margin: 0 0 24px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .section-title-mobile {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .item-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .item-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: linear-gradient(to bottom right, #ff6b6b, #feca57);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .item-content h4 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .item-content p {
+            margin: 0;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* List Page Styles */
+        .list-page {
+            background: var(--bg-light);
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .page-header {
+            background: var(--white);
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-header h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .add-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar {
+            background: var(--white);
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .filter-tabs {
+            background: var(--white);
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+        }
+
+        .filter-tab {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: none;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .filter-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .list-content {
+            padding: 20px;
+        }
+
+        .event-card, .dream-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            width: 12px;
+            height: 12px;
+            color: #fbbf24;
+        }
+
+        .star.empty {
+            color: #d1d5db;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .tag {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .tag.high-rated {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .tag.completed {
+            background: #f0fdf4;
+            color: #15803d;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: var(--white);
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+        }
+
         /* Tech Stack Section */
         .tech-stack {
-            background: var(--bg-light);
+            background: white;
         }
 
         .tech-list {
@@ -440,6 +748,7 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
                     <li><a href="#tech">Tech</a></li>
                     <li><a href="#download">Download</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -462,6 +771,7 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
         <a href="#tech">Tech</a>
         <a href="#download">Download</a>
         <a href="#contact">Contact</a>
@@ -517,6 +827,321 @@
         </div>
     </section>
 
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">App Screenshots</h2>
+                <p class="section-subtitle">See Dreamory in action with these mobile app screenshots.</p>
+            </div>
+            <div class="screenshots-grid">
+                <!-- Dashboard Screen -->
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>📶🔋</span>
+                        </div>
+                        <div class="dashboard">
+                            <div class="welcome-header">
+                                <h1>Hello, Dreamer! 👋</h1>
+                                <p>Your memory journey continues...</p>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-number">24</div>
+                                    <div class="stat-label">Events Logged</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">4.2</div>
+                                    <div class="stat-label">Avg Rating</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">3</div>
+                                    <div class="stat-label">Dreams Achieved</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number">7</div>
+                                    <div class="stat-label">Dreams Pending</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title-mobile"><i data-lucide="party-popper"></i> Recent Achievements</div>
+                            <div class="item-card">
+                                <div class="item-icon"><i data-lucide="star"></i></div>
+                                <div class="item-content">
+                                    <h4>Learn Photography</h4>
+                                    <p>Achieved 2 days ago</p>
+                                </div>
+                            </div>
+
+                            <div class="section-title-mobile">Recent Experiences</div>
+                            <div class="item-card">
+                                <div class="item-icon" style="background: linear-gradient(to bottom right, #ff6b6b, #feca57);"><i data-lucide="theater"></i></div>
+                                <div class="item-content">
+                                    <h4>Broadway Show - Hamilton</h4>
+                                    <p>Yesterday • ⭐⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="item-icon" style="background: linear-gradient(to bottom right, #667eea, #764ba2);"><i data-lucide="pizza"></i></div>
+                                <div class="item-content">
+                                    <h4>Tony's Pizza Night</h4>
+                                    <p>3 days ago • ⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <div class="nav-item active">
+                                <div class="nav-icon"><i data-lucide="home"></i></div>
+                                <span>Home</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="calendar"></i></div>
+                                <span>Events</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="star"></i></div>
+                                <span>Dreams</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="bar-chart"></i></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events List Screen -->
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>📶🔋</span>
+                        </div>
+                        <div class="list-page">
+                            <div class="page-header">
+                                <h2>My Events</h2>
+                                <button class="add-btn"><i data-lucide="plus"></i></button>
+                            </div>
+
+                            <div class="search-bar">
+                                <input type="text" class="search-input" placeholder="Search events..." value="">
+                            </div>
+
+                            <div class="filter-tabs">
+                                <button class="filter-tab active">All</button>
+                                <button class="filter-tab">Entertainment</button>
+                                <button class="filter-tab">Food & Drink</button>
+                                <button class="filter-tab">Travel</button>
+                                <button class="filter-tab">Social</button>
+                            </div>
+
+                            <div class="list-content">
+                                <div class="event-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <h3 class="card-title">Broadway Show - Hamilton</h3>
+                                            <p class="card-subtitle">Dec 15, 2024</p>
+                                        </div>
+                                        <div class="stars">
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--text-light); font-size: 14px; margin: 8px 0;"><i data-lucide="map-pin" style="width: 16px; height: 16px; vertical-align: text-bottom;"></i> Times Square Theater</p>
+                                    <div class="tags">
+                                        <span class="tag">Entertainment</span>
+                                        <span class="tag high-rated">Highly Rated</span>
+                                    </div>
+                                </div>
+
+                                <div class="event-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <h3 class="card-title">Tony's Pizza Night</h3>
+                                            <p class="card-subtitle">Dec 12, 2024</p>
+                                        </div>
+                                        <div class="stars">
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star empty">⭐</span>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--text-light); font-size: 14px; margin: 8px 0;"><i data-lucide="map-pin" style="width: 16px; height: 16px; vertical-align: text-bottom;"></i> Little Italy</p>
+                                    <div class="tags">
+                                        <span class="tag">Food & Drink</span>
+                                        <span class="tag high-rated">Highly Rated</span>
+                                    </div>
+                                </div>
+
+                                <div class="event-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <h3 class="card-title">Weekend Hiking Trip</h3>
+                                            <p class="card-subtitle">Dec 8, 2024</p>
+                                        </div>
+                                        <div class="stars">
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--text-light); font-size: 14px; margin: 8px 0;"><i data-lucide="map-pin" style="width: 16px; height: 16px; vertical-align: text-bottom;"></i> Blue Ridge Mountains</p>
+                                    <div class="tags">
+                                        <span class="tag">Adventure</span>
+                                        <span class="tag high-rated">Highly Rated</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="home"></i></div>
+                                <span>Home</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"><i data-lucide="calendar"></i></div>
+                                <span>Events</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="star"></i></div>
+                                <span>Dreams</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="bar-chart"></i></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dreams/Bucket List Screen -->
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>📶🔋</span>
+                        </div>
+                        <div class="list-page">
+                            <div class="page-header">
+                                <h2>My Dreams</h2>
+                                <button class="add-btn"><i data-lucide="plus"></i></button>
+                            </div>
+
+                            <div class="search-bar">
+                                <input type="text" class="search-input" placeholder="Search dreams..." value="">
+                            </div>
+
+                            <div class="filter-tabs">
+                                <button class="filter-tab active">All</button>
+                                <button class="filter-tab">Pending</button>
+                                <button class="filter-tab">Completed</button>
+                                <button class="filter-tab">High Priority</button>
+                            </div>
+
+                            <div class="list-content">
+                                <div class="dream-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <h3 class="card-title" style="text-decoration: line-through; opacity: 0.6;">Learn Photography</h3>
+                                            <p class="card-subtitle">Travel • Target: Dec 1, 2024</p>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i data-lucide="check-circle" style="color: #10b981; width: 20px; height: 20px;"></i>
+                                            <div class="stars">
+                                                <span class="star">⭐</span>
+                                                <span class="star">⭐</span>
+                                                <span class="star">⭐</span>
+                                                <span class="star">⭐</span>
+                                                <span class="star">⭐</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--text-light); font-size: 14px; margin: 8px 0; opacity: 0.6;">Master the art of capturing beautiful moments and landscapes</p>
+                                    <div class="tags">
+                                        <span class="tag completed"><i data-lucide="sparkles" style="width: 12px; height: 12px; vertical-align: text-bottom;"></i> Achieved</span>
+                                        <span class="tag"><i data-lucide="target" style="width: 12px; height: 12px; vertical-align: text-bottom;"></i> Linked to Event</span>
+                                    </div>
+                                </div>
+
+                                <div class="dream-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <h3 class="card-title">Visit Japan in Cherry Blossom Season</h3>
+                                            <p class="card-subtitle">Travel • Target: Apr 15, 2025</p>
+                                        </div>
+                                        <div class="stars">
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--text-light); font-size: 14px; margin: 8px 0;">Experience the magical pink blossoms in Kyoto and Tokyo</p>
+                                    <div class="tags">
+                                        <span class="tag"><i data-lucide="target" style="width: 12px; height: 12px; vertical-align: text-bottom;"></i> In Progress</span>
+                                        <span class="tag" style="background: #fef2f2; color: #dc2626;"><i data-lucide="flame" style="width: 12px; height: 12px; vertical-align: text-bottom;"></i> High Priority</span>
+                                    </div>
+                                </div>
+
+                                <div class="dream-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <h3 class="card-title">Run a Marathon</h3>
+                                            <p class="card-subtitle">Fitness • Target: Oct 1, 2025</p>
+                                        </div>
+                                        <div class="stars">
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star">⭐</span>
+                                            <span class="star empty">⭐</span>
+                                            <span class="star empty">⭐</span>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--text-light); font-size: 14px; margin: 8px 0;">Complete a full 26.2 mile marathon race</p>
+                                    <div class="tags">
+                                        <span class="tag"><i data-lucide="target" style="width: 12px; height: 12px; vertical-align: text-bottom;"></i> In Progress</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="home"></i></div>
+                                <span>Home</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="calendar"></i></div>
+                                <span>Events</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"><i data-lucide="star"></i></div>
+                                <span>Dreams</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"><i data-lucide="bar-chart"></i></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Tech Stack Section -->
     <section id="tech" class="tech-stack">
         <div class="container">
@@ -526,7 +1151,7 @@
             </div>
             <div class="tech-list">
                 <div class="tech-item">Laravel 12 + Livewire</div>
-                <div class="tech-item">NativePHP for Android</div>
+                <div class="tech-item">NativePHP for Mobile</div>
                 <div class="tech-item">SQLite (Local Storage)</div>
                 <div class="tech-item">Alpine.js + Tailwind CSS 4</div>
                 <div class="tech-item">Offline-First Architecture</div>
@@ -614,6 +1239,9 @@
                 mobileMenu.classList.remove('active');
             }
         });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
 </body>
 </html>
